@@ -1,8 +1,8 @@
 import { Button } from '@/components/ui/button';
-import banner from '@/assets/images/banner.png';
-import hero from '@/assets/images/hero.png';
-import { Link } from 'react-router-dom';
+import banner from '@/assets/images/24307396_6920933.jpg';
+// import hero from '@/assets/images/hero.png';
 import Footer from '@/layouts/Footer';
+import HomeProduct from '@/components/HomeProduct';
 
 export default function Home() {
   return (
@@ -22,23 +22,22 @@ export default function Home() {
           <Button className="mt-5">Learn more</Button>
         </div>
         <div className="relative -right-14">
-          <img src={banner} alt="" />
+          <img src={banner} alt="" style={{ height: '500px' }} />
         </div>
       </div>
-      <div className="mb-96">
-        <div>
-          <img className="mx-auto" src={hero} alt="" />
-        </div>
-        <div className="flex flex-col items-center justify-center">
+      <HomeProduct />
+      <Footer />
+    </>
+  );
+}
+
+{
+  /* <div className="flex flex-col items-center justify-center">
           <h1 className="text-5xl font-black text-primary uppercase mt-10">
             The future of tech is here
           </h1>
           <Button className="mt-10" asChild>
             <Link to="/products">Brows all products</Link>
           </Button>
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+        </div> */
 }
