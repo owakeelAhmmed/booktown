@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar';
+import { Avatar, AvatarFallback } from '../components/ui/avatar';
+import { FaUserGear } from 'react-icons/fa6';
 import { Button } from '../components/ui/button';
 import { DropdownMenuSeparator } from '../components/ui/dropdown-menu';
 import { DropdownMenuLabel } from '../components/ui/dropdown-menu';
@@ -48,10 +49,9 @@ export default function Navbar() {
               </li>
               <li className="ml-5">
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="outline-none">
-                    <Avatar>
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>CN</AvatarFallback>
+                  <DropdownMenuTrigger className="outline-none ">
+                    <Avatar className="rounded-full border border-blue-400 flex justify-center items-center">
+                      <FaUserGear className="text-3xl " />
                     </Avatar>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
