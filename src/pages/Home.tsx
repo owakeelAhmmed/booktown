@@ -30,14 +30,3 @@ export default function Home() {
     </>
   );
 }
-
-{
-  /* <div className="flex flex-col items-center justify-center">
-          <h1 className="text-5xl font-black text-primary uppercase mt-10">
-            The future of tech is here
-          </h1>
-          <Button className="mt-10" asChild>
-            <Link to="/products">Brows all products</Link>
-          </Button>
-        </div> */
-}
