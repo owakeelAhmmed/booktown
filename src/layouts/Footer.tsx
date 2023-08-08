@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from '@/assets/images/technet-logo-white.png';
 import { RiFacebookBoxFill, RiInstagramLine } from 'react-icons/ri';
 export default function Footer() {
   const date = new Date();
@@ -8,8 +6,9 @@ export default function Footer() {
   return (
     <div className="bg-[#242630] text-secondary p-20">
       <div className="flex justify-between">
-        <div>
-          <img className="h-10" src={logo} alt="Logo" />
+        <div className="text-2xl font-bold">
+          <span className="text-red-500 text-3xl">B</span>ook
+          <span className="text-blue-500 text-3xl">T</span>own
         </div>
         <div className="flex gap-20">
           <ul className="space-y-2">
@@ -34,7 +33,11 @@ export default function Footer() {
       <div className="flex w-full mt-20 gap-5">
         <p>Privacy Policy</p>
         <p>Terms & Condition</p>
-        <p className="ml-auto"> &#169; TechNet {year}</p>
+        <p className="ml-auto">
+          {' '}
+          &#169; <span className="text-red-500 text-3xl">B</span>ook
+          <span className="text-blue-500 text-3xl">T</span>own {year}
+        </p>
       </div>
     </div>
   );

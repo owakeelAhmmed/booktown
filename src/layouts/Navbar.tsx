@@ -18,8 +18,7 @@ export default function Navbar() {
       <div className="h-full w-full bg-white/60">
         <div className="flex items-center justify-between w-full md:max-w-7xl h-full mx-auto ">
           <div className="text-2xl font-bold">
-            {' '}
-            <span className="text-red-500 text-3xl">B</span>ook{' '}
+            <span className="text-red-500 text-3xl">B</span>ook
             <span className="text-blue-500 text-3xl">T</span>own
           </div>
           <div>
