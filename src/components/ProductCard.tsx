@@ -3,6 +3,8 @@ import { IProduct } from '@/types/globalTypes';
 import { toast } from './ui/use-toast';
 import { Button } from './ui/button';
 import { Link, useLocation } from 'react-router-dom';
+import { useAppDispatch } from '@/redux/hook';
+import { addToCart } from '@/redux/feature/cart/cartSlice';
 
 interface IProps {
   product: IProduct;
@@ -11,9 +13,11 @@ interface IProps {
 export default function ProductCard({ product }: IProps) {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const dispatch = useAppDispatch();
   const handleAddProduct = (product: IProduct) => {
+    dispatch(addToCart(product));
     toast({
-      description: 'Product Added',
+      description: 'Your Book Added',
     });
   };
   return (
