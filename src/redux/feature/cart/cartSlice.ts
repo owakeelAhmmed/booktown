@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { IProduct } from '@/types/globalTypes';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
@@ -14,10 +15,36 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<IProduct>) => {
-      state.products.push(action.payload);
+      const exiting = state.products.find(
+        (product) => product._id === action.payload._id
+      );
+
+      if (exiting) {
+        exiting.quantity = exiting.quantity! + 1;
+      } else {
+        state.products.push({ ...action.payload, quantity: 1 });
+      }
+    },
+    miniumsToCart: (state, action: PayloadAction<IProduct>) => {
+      const exiting = state.products.find(
+        (product) => product._id === action.payload._id
+      );
+
+      if (exiting && exiting.quantity! > 1) {
+        exiting.quantity = exiting.quantity! - 1;
+      } else {
+        state.products = state.products.filter(
+          (product) => product._id !== action.payload._id
+        );
+      }
+    },
+    removeFormCart: (state, action: PayloadAction<IProduct>) => {
+      state.products = state.products.filter(
+        (product) => product._id !== action.payload._id
+      );
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFormCart, miniumsToCart } = cartSlice.actions;
 export default cartSlice.reducer;

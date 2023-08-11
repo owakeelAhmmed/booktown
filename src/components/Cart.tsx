@@ -12,12 +12,17 @@ import {
   HiOutlineTrash,
 } from 'react-icons/hi';
 import { Button } from './ui/button';
-import { IProduct } from '@/types/globalTypes';
+import { useAppDispatch, useAppSelector } from '@/redux/hook';
+import {
+  addToCart,
+  miniumsToCart,
+  removeFormCart,
+} from '@/redux/feature/cart/cartSlice';
 
 export default function Cart() {
+  const { products } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
   //! Dummy data
-
-  const products: IProduct[] = [];
   const total = 0;
 
   //! **
@@ -32,7 +37,7 @@ export default function Cart() {
       <SheetContent className="overflow-auto relative">
         <SheetHeader>
           <SheetTitle>Cart</SheetTitle>
-          <h1>Total: {total.toFixed(2)}</h1>
+          <h3>Total: {total.toFixed(2)}</h3>
         </SheetHeader>
         <div className="space-y-5">
           {products.map((product) => (
@@ -46,19 +51,20 @@ export default function Cart() {
               <div className="px-2 w-full flex flex-col gap-3">
                 <h1 className="text-2xl self-center">{product?.name}</h1>
                 <p>Quantity: {product.quantity}</p>
-                <p className="text-xl">
+                <p className="text-xs">
                   Total Price: {(product.price * product.quantity!).toFixed(2)}{' '}
                   $
                 </p>
               </div>
               <div className="border-l pl-5 flex flex-col justify-between">
-                <Button>
+                <Button onClick={() => dispatch(addToCart(product))}>
                   <HiOutlinePlus size="20" />
                 </Button>
-                <Button>
+                <Button onClick={() => dispatch(miniumsToCart(product))}>
                   <HiMinus size="20" />
                 </Button>
                 <Button
+                  onClick={() => dispatch(removeFormCart(product))}
                   variant="destructive"
                   className="bg-red-500 hover:bg-red-400"
                 >
