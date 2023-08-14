@@ -11,6 +11,7 @@ interface IProps {
 }
 
 export default function ProductCard({ product }: IProps) {
+  console.log(product);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const dispatch = useAppDispatch();
@@ -22,16 +23,22 @@ export default function ProductCard({ product }: IProps) {
   };
   return (
     <div>
-      <div className="rounded-2xl h-[580px] flex flex-col items-start justify-between p-5 overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all gap-2">
-        <Link to={`/product-details/${product._id}`} className="w-full">
-          <img src={product?.image} alt="product" />
-          <h1 className="text-xl font-semibold">{product?.name}</h1>
+      <div className="rounded-2xl h-[550px] w-[300px] flex flex-col items-center justify-center p-5 overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all gap-2">
+        <Link to={`/product-details/${product._id}`} className="w-full ">
+          <img
+            className="w-full h-[300px]"
+            src={product?.image}
+            alt="product"
+          />
+          <h1 className="text-xl font-semibold text-center">
+            {product?.title}
+          </h1>
         </Link>
-        <p>Rating: {product?.rating}</p>
-        <p className="text-sm">
-          Availability: {product?.status ? 'In stock' : 'Out of stock'}
-        </p>
+        <p className="text-sm">Author: {product?.author}</p>
+        <p className="text-sm">Genre: {product?.genre}</p>
+        <p className="text-sm">Publication Date: {product?.publication}</p>
         <p className="text-sm">Price: {product?.price}</p>
+        <p>Rating: {product?.rating}</p>
         {!isHomePage && (
           <Button variant="default" onClick={() => handleAddProduct(product)}>
             Add to cart

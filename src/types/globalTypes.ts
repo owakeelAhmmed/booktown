@@ -1,6 +1,9 @@
 export interface IProduct {
   _id: number;
-  name: string;
+  title: string;
+  author: string;
+  genre: string;
+  publication: string;
   image: string;
   price: number;
   features: string[];
