@@ -2,7 +2,7 @@ import { IProduct } from '@/types/globalTypes';
 import ProductCard from './ProductCard';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
-import { useGetProductsQuery } from '@/redux/api/apiSlice';
+import { useGetProductsQuery } from '@/redux/feature/product/productApi';
 
 export default function HomeProduct() {
   // Fetch data using the useGetProductsQuery hook

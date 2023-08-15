@@ -11,7 +11,6 @@ interface IProps {
 }
 
 export default function ProductCard({ product }: IProps) {
-  console.log(product);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const dispatch = useAppDispatch();

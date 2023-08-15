@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Avatar, AvatarFallback } from '../components/ui/avatar';
+import { Avatar } from '../components/ui/avatar';
 import { FaUserGear } from 'react-icons/fa6';
 import { Button } from '../components/ui/button';
 import { DropdownMenuSeparator } from '../components/ui/dropdown-menu';
@@ -36,7 +36,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Button variant="link" asChild>
-                  <Link to="/checkout">Checkout</Link>
+                  <Link to="/addbook">Add New Book</Link>
                 </Button>
               </li>
               <li>

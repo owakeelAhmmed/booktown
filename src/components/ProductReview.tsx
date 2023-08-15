@@ -6,7 +6,7 @@ import { FiSend } from 'react-icons/fi';
 import {
   useGetCommentQuery,
   usePostCommentMutation,
-} from '@/redux/api/apiSlice';
+} from '@/redux/feature/product/productApi';
 
 interface IProps {
   id: string;
@@ -44,7 +44,7 @@ export default function ProductReview({ id }: IProps) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto mt-5">
+    <div className="max-w-7xl mx-auto mt-20">
       <form className="flex gap-5 items-center" onSubmit={handleSubmit}>
         <Textarea
           className="min-h-[30px]"

@@ -1,17 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import ProductCard from '@/components/ProductCard';
 import { useToast } from '@/components/ui/use-toast';
-import { useGetProductsQuery } from '@/redux/api/apiSlice';
+import { useGetProductsQuery } from '@/redux/feature/product/productApi';
 import { IProduct } from '@/types/globalTypes';
 
 export default function Products() {
   const { data, isLoading } = useGetProductsQuery(undefined);
   console.log(isLoading);
   const { toast } = useToast();
-
-  // const handleSlider = (value: number[]) => {
-  //   console.log(value);
-  // };
 
   return (
     <div className="grid grid-cols-6 max-w-7xl mx-auto relative ">
