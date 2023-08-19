@@ -1,14 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface IBook {
+interface Book {
   title: string;
   author: string;
   genre: string;
   year: number;
 }
-
-interface ISearch {
-  books: IBook[];
+export interface ISearch {
+  books: Book[];
   searchTerm: string;
   selectedGenre: string;
   selectedYear: string;

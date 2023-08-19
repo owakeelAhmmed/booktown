@@ -20,6 +20,12 @@ const productApi = api.injectEndpoints({
       query: (id) => `/comment/${id}`,
       providesTags: ['comments'],
     }),
+    deleteProduct: builder.mutation({
+      query: (id) => ({
+        url: `/product/${id}`,
+        method: 'DELETE',
+      }),
+    }),
   }),
 });
 
@@ -28,4 +34,5 @@ export const {
   useGetSingleProductQuery,
   usePostCommentMutation,
   useGetCommentQuery,
+  useDeleteProductMutation,
 } = productApi;

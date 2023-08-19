@@ -10,8 +10,9 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from '../components/ui/dropdown-menu';
-import { HiOutlineSearch } from 'react-icons/hi';
 import Cart from '../components/Cart';
+import { Input } from '@/components/ui/input';
+import { SearchBar } from '@/components/searchBar';
 
 export default function Navbar() {
   return (
@@ -41,7 +42,8 @@ export default function Navbar() {
               </li>
               <li>
                 <Button variant="ghost">
-                  <HiOutlineSearch size="25" />
+                  {/* <HiOutlineSearch size="25" /> */}
+                  {/* <SearchBar /> */}
                 </Button>
               </li>
               <li>

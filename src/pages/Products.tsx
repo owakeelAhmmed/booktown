@@ -5,7 +5,10 @@ import { useGetProductsQuery } from '@/redux/feature/product/productApi';
 import { IProduct } from '@/types/globalTypes';
 
 export default function Products() {
-  const { data, isLoading } = useGetProductsQuery(undefined);
+  const { data, isLoading } = useGetProductsQuery(undefined, {
+    refetchOnMountOrArgChange: true,
+    pollingInterval: 30000,
+  });
   console.log(isLoading);
   const { toast } = useToast();
 
