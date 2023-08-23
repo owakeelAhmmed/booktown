@@ -1,26 +1,28 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { ISearch, setSearchTerm } from '@/redux/feature/cart/searchSlice';
+import { useDispatch } from 'react-redux';
 import { Input } from './ui/input';
-import { BookList } from './bookList';
+import { useState } from 'react';
+import { setSearchQuery } from '@/redux/feature/bookSearch/searchSlice';
 
 const SearchBar = () => {
   const dispatch = useDispatch();
-  const searchTerm = useSelector((state: ISearch) => state.books);
+  const [input, setInput] = useState('');
 
-  const handleSearch = (value: string) => {
-    dispatch(setSearchTerm(value));
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    dispatch(setSearchQuery(input));
   };
 
   return (
-    <div className="flex flex-col items-center mt-4">
-      <Input
-        type="text"
-        placeholder="Search by title, author, or genre"
-        value={searchTerm}
-        onChange={(e) => handleSearch(e.target.value)}
-        className="w-80"
-      />
-      <BookList />
+    <div className="flex justify-between">
+      <form onSubmit={handleSubmit}>
+        <Input
+          type="search"
+          name="search"
+          placeholder="Search..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+      </form>
     </div>
   );
 };

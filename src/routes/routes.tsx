@@ -4,10 +4,11 @@ import Login from '@/pages/Login';
 import NotFound from '@/pages/NotFound';
 import Home from '@/pages/Home';
 import Products from '@/pages/Products';
-import Signup from '@/pages/Signup';
 import ProductDetails from '@/pages/ProductDetails';
 import Addbook from '@/pages/bookAdd';
 import EditBook from '@/pages/editBook';
+import Signup from '@/pages/Signup';
+import PrivateRoute from './privateRoute';
 
 const routes = createBrowserRouter([
   {
@@ -24,11 +25,19 @@ const routes = createBrowserRouter([
       },
       {
         path: '/product-details/:id',
-        element: <ProductDetails />,
+        element: (
+          <PrivateRoute>
+            <ProductDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: '/addbook',
-        element: <Addbook />,
+        element: (
+          <PrivateRoute>
+            <Addbook />
+          </PrivateRoute>
+        ),
       },
       {
         path: '/editbook',

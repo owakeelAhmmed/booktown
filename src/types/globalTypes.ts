@@ -3,7 +3,7 @@ export interface IProduct {
   title: string;
   author: string;
   genre: string;
-  publication: number;
+  publication: string;
   image: string;
   price: number;
   features: string[];

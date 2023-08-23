@@ -28,12 +28,9 @@ export default function ProductDetails() {
 
   const handleDeleteClick = async (productId: string | undefined) => {
     try {
-      // Trigger the delete mutation
       closeDeleteConfirmation();
       await deleteBook(productId);
       navigate('/products');
-      // After successful deletion, you can navigate the user to a product page
-      // or take any other appropriate action
       console.log('Product deleted successfully');
     } catch (error) {
       console.error('Error deleting product:', error);

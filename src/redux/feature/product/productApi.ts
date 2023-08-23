@@ -20,10 +20,18 @@ const productApi = api.injectEndpoints({
       query: (id) => `/comment/${id}`,
       providesTags: ['comments'],
     }),
+
     deleteProduct: builder.mutation({
       query: (id) => ({
         url: `/product/${id}`,
         method: 'DELETE',
+      }),
+    }),
+    updatePost: builder.mutation({
+      query: ({ id, ...patch }) => ({
+        url: `/product/${id}`,
+        method: 'PATCH',
+        body: patch,
       }),
     }),
   }),

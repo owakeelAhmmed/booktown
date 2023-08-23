@@ -5,15 +5,12 @@ import { Button } from './ui/button';
 import { useGetProductsQuery } from '@/redux/feature/product/productApi';
 
 export default function HomeProduct() {
-  // Fetch data using the useGetProductsQuery hook
   const { data, isLoading, isError } = useGetProductsQuery(undefined);
 
-  // Handle loading state
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
-  // Handle error state
   if (isError) {
     return <p>Error loading products</p>;
   }
@@ -22,7 +19,7 @@ export default function HomeProduct() {
     <>
       <div className="grid grid-cols-6 max-w-7xl mx-auto relative ">
         <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
-          {data?.data?.map((product: IProduct) => (
+          {data?.data?.slice(0, 10).map((product: IProduct) => (
             <ProductCard product={product} key={product._id} />
           ))}
         </div>

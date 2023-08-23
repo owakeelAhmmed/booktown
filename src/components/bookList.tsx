@@ -1,4 +1,4 @@
-import { ISearch } from '@/redux/feature/cart/searchSlice';
+import { ISearch } from '@/redux/feature/bookSearch/searchSlice';
 import { useSelector } from 'react-redux';
 
 const BookList = () => {

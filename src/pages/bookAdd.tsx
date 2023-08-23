@@ -46,7 +46,7 @@ export default function Addbook() {
   return (
     <div className="flex justify-center items-center h-[calc(100vh-80px)] gap-10 text-primary">
       <div className="max-w-3xl w-full">
-        <h1 className="mb-2">Delivery Information</h1>
+        <h1 className="mb-2">Give Me Your Book Information</h1>
         <div className="h-[60vh] border border-gray-300 rounded-md p-10 overflow-auto">
           <form className="flex gap-5" onSubmit={handleSubmit}>
             <div className="w-full space-y-5">
@@ -56,6 +56,7 @@ export default function Addbook() {
                   type="text"
                   id="title"
                   className="mt-2"
+                  placeholder="Enter Your Title"
                   onChange={(e) => setTitle(e.target.value)}
                   value={title}
                 />
@@ -66,6 +67,7 @@ export default function Addbook() {
                   type="text"
                   id="author"
                   className="mt-2"
+                  placeholder="Enter Your Author Name"
                   onChange={(e) => setAuthor(e.target.value)}
                   value={author}
                 />
@@ -76,6 +78,7 @@ export default function Addbook() {
                   type="text"
                   id="genre"
                   className="mt-2"
+                  placeholder="Enter Your Genre"
                   onChange={(e) => setGenre(e.target.value)}
                   value={genre}
                 />
@@ -88,6 +91,7 @@ export default function Addbook() {
                   type="text"
                   id="date"
                   className="mt-2"
+                  placeholder="Enter Your Date"
                   onChange={(e) => setDate(e.target.value)}
                   value={date}
                 />
@@ -98,6 +102,7 @@ export default function Addbook() {
                   type="text"
                   id="image"
                   className="mt-2"
+                  placeholder="Enter Your Image"
                   onChange={(e) => setImageLink(e.target.value)}
                   value={imageLink}
                 />
@@ -108,6 +113,7 @@ export default function Addbook() {
                   type="text"
                   id="price"
                   className="mt-2"
+                  placeholder="Enter Your Price"
                   onChange={(e) => setPrice(e.target.value)}
                   value={price}
                 />
