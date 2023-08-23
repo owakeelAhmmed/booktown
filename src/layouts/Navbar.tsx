@@ -15,7 +15,6 @@ import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import { signOut } from 'firebase/auth';
 import { Auth } from '@/lib/firebase';
 import { setUser } from '@/redux/feature/user/userSlice';
-import { useSelector } from 'react-redux';
 import { SearchBar } from '@/components/searchBar';
 
 export default function Navbar() {
