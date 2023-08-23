@@ -30,14 +30,6 @@ export default function EditBook() {
     dispatch(updateProduct(updatedData));
   };
 
-  // const [formData, setFormData] = useState({
-  //   title: '',
-  //   author: '',
-  //   genre: '',
-  //   date: '',
-  //   image: '',
-  //   price: '',
-  // });
   // const handleInputChange = (event: { target: { name: any; value: any } }) => {
   //   const { name, value } = event.target;
   //   setFormData((prevData) => ({ ...prevData, [name]: value }));
