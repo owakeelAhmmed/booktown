@@ -1,5 +1,3 @@
-// productSlice.js
-
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -33,7 +31,6 @@ const updateBookSlice = createSlice({
         state.products[index] = updatedProduct;
       }
     },
-    // ... add more actions for adding, deleting, etc.
   },
 });
 
@@ -42,7 +39,6 @@ export const {
   fetchProductsSuccess,
   fetchProductsFailure,
   updateProduct,
-  // ... export other actions
 } = updateBookSlice.actions;
 
 export default updateBookSlice.reducer;

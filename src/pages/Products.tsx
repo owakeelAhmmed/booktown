@@ -26,11 +26,11 @@ export default function Products() {
         ? data?.data?.map((product: IProduct) => (
             <ProductCard key={product._id} product={product} />
           ))
-        : Array.isArray(bookSearchResult) // Check if bookSearchResult is an array
+        : Array.isArray(bookSearchResult)
         ? bookSearchResult.map((product: IProduct) => (
             <ProductCard key={product._id} product={product} />
           ))
-        : null; // Return null or a placeholder if bookSearchResult is not an array
+        : null;
   }
 
   return (
