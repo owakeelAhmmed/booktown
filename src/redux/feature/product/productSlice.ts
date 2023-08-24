@@ -15,7 +15,7 @@ const productSlice = createSlice({
   reducers: {
     deleteProduct(state, action: PayloadAction<string>) {
       state.products = state.products.filter(
-        (product) => product._id !== action.payload._id
+        (product) => product._id !== action.payload
       );
     },
   },
