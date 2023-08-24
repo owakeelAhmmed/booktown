@@ -12,33 +12,37 @@ export default function Products() {
     refetchOnMountOrArgChange: true,
     pollingInterval: 30000,
   });
+  console.log(isLoading);
+  console.log(isError);
 
   const { bookSearch } = useAppSelector((state) => state.search);
-  console.log(bookSearch);
-  const { data: bookSearchResult } = useSearchQuery(bookSearch);
-  console.log(bookSearchResult);
+
+  // const { data: bookSearchResult } = useSearchQuery(bookSearch);
+
   useToast();
 
-  let content;
+  // let content;
 
-  if (!isError && !isLoading && data?.data?.length > 0) {
-    content =
-      bookSearch === ''
-        ? data?.data?.map((product: IProduct) => (
-            <ProductCard key={product._id} product={product} />
-          ))
-        : Array.isArray(bookSearchResult)
-        ? bookSearchResult.map((product: IProduct) => (
-            <ProductCard key={product._id} product={product} />
-          ))
-        : null;
-  }
+  // if (!isError && !isLoading && data?.data?.length > 0) {
+  //   content =
+  //     bookSearch === ''
+  //       ? data?.data?.map((product: IProduct) => (
+  //           <ProductCard key={product._id} product={product} />
+  //         ))
+  //       : Array.isArray(bookSearchResult)
+  //       ? bookSearchResult.map((product: IProduct) => (
+  //           <ProductCard key={product._id} product={product} />
+  //         ))
+  //       : null;
+  // }
 
   return (
     <React.Fragment>
       <div className="grid grid-cols-6 max-w-7xl mx-auto relative">
         <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
-          {content}
+          {data?.data?.map((product: IProduct) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
         </div>
       </div>
     </React.Fragment>
