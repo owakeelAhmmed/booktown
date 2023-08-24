@@ -10,7 +10,7 @@ export default function Addbook() {
   const [author, setAuthor] = useState<string>('');
   const [genre, setGenre] = useState<string>('');
   const [date, setDate] = useState<string>('');
-  const [imageLink, setImageLink] = useState<string>('');
+  const [image, setImageLink] = useState<string>('');
   const [price, setPrice] = useState<string>('');
 
   const [postBook, { isLoading, isError, isSuccess }] = usePostBookMutation();
@@ -31,7 +31,7 @@ export default function Addbook() {
       author,
       genre,
       date: publicationTimestamp,
-      imageLink,
+      image,
       price,
     });
 
@@ -104,7 +104,7 @@ export default function Addbook() {
                   className="mt-2"
                   placeholder="Enter Your Image"
                   onChange={(e) => setImageLink(e.target.value)}
-                  value={imageLink}
+                  value={image}
                 />
               </div>
               <div>

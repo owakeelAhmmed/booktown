@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 interface Product {
-  _id: string; // Assuming _id is a string, change it to the correct type if needed
+  _id: string;
   title: string;
   author: string;
   genre: string;
@@ -8,14 +8,12 @@ interface Product {
   imageLink: string;
   price: string;
   editBookId: number | null;
-  // Other properties of the product
 }
 
-// In your state
 interface EditBookState {
   products: Product[];
   loading: boolean;
-  error: any; // You should define an appropriate type for error
+  error: any;
 }
 const initialState: EditBookState = {
   products: [],
@@ -48,7 +46,6 @@ const editBookSlice = createSlice({
         state.products[index] = updatedProduct;
       }
     },
-    // ... add more actions for adding, deleting, etc.
   },
 });
 
@@ -57,7 +54,6 @@ export const {
   fetchProductsSuccess,
   fetchProductsFailure,
   updateProduct,
-  // ... export other actions
 } = editBookSlice.actions;
 
 export default editBookSlice.reducer;
