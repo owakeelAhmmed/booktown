@@ -1,34 +1,31 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { toast } from '@/components/ui/use-toast';
-import {
-  fetchProductsStart,
-  updateProduct,
-} from '@/redux/feature/editbook/updateBookSlice';
-import { useAppSelector } from '@/redux/hook';
-import { RootState } from '@/redux/store';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+// import { toast } from '@/components/ui/use-toast';
+// import { useAppSelector } from '@/redux/hook';
+// import { RootState } from '@/redux/store';
+// import { useEffect} from 'react';
+// import { useDispatch } from 'react-redux';
+// import { useParams } from 'react-router-dom';
 
 export default function EditBook() {
-  const { id } = useParams();
-  const products = useAppSelector((state: RootState) => state.products);
-  const dispatch = useDispatch();
+  // const { id } = useParams();
+  // const products = useAppSelector((state: RootState) => state.products);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchProductsStart());
-    // Fetch products from your API here
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchProductsStart());
+  //   // Fetch products from your API here
+  // }, [dispatch]);
 
-  const handleUpdateProduct = (productId, updatedData) => {
-    toast({
-      description: 'Update Successful',
-    });
-    dispatch(updateProduct(updatedData));
-  };
+  // const handleUpdateProduct = (productId, updatedData) => {
+  //   toast({
+  //     description: 'Update Successful',
+  //   });
+  //   dispatch(updateProduct(updatedData));
+  // };
 
   // const handleInputChange = (event: { target: { name: any; value: any } }) => {
   //   const { name, value } = event.target;
@@ -46,7 +43,7 @@ export default function EditBook() {
       <div className="max-w-3xl w-full">
         <h1 className="mb-2">Update Your Information</h1>
         <div className="h-[60vh] border border-gray-300 rounded-md p-10 overflow-auto">
-          <form className="flex gap-5" onSubmit={handleUpdateProduct}>
+          <form className="flex gap-5">
             <div className="w-full space-y-5">
               <div>
                 <Label htmlFor="title">Book Title</Label>

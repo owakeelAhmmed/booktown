@@ -3,13 +3,12 @@ import cartReducer from './feature/cart/cartSlice';
 import { api } from './api/apiSlice';
 import userReducer from './feature/user/userSlice';
 import searchReducer from './feature/bookSearch/searchSlice';
-import updateReducer from './feature/editbook/updateBookSlice';
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
     search: searchReducer,
-    update: updateReducer,
+    // update: updateReducer,
     user: userReducer,
     [api.reducerPath]: api.reducer,
   },

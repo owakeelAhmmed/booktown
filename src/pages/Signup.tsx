@@ -2,16 +2,11 @@ import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import { SignupForm } from '../components/SignUpForm';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/login.jpg';
 
 export default function Signup() {
   return (
     <>
       <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        {/* <div className="text-2xl font-bold absolute top-9 z-10">
-          <span className="text-red-500 text-3xl">B</span>ook
-          <span className="text-blue-500 text-3xl">T</span>own
-        </div> */}
         <Link
           to="/login"
           className={cn(

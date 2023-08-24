@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import ProductCard from '@/components/ProductCard';
 import { useToast } from '@/components/ui/use-toast';
 import { useSearchQuery } from '@/redux/feature/bookSearch/searchApi';
@@ -16,7 +17,7 @@ export default function Products() {
   console.log(bookSearch);
   const { data: bookSearchResult } = useSearchQuery(bookSearch);
   console.log(bookSearchResult);
-  const { toast } = useToast();
+  useToast();
 
   let content;
 

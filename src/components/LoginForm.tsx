@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 
 import * as React from 'react';
@@ -8,13 +9,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
-import { useAppSelector } from '@/redux/hook';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '@/redux/feature/user/userSlice';
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
-
 interface LoginFormInputs {
   email: string;
   password: string;
@@ -28,7 +27,7 @@ export function LoginForm({ className, ...props }: UserAuthFormProps) {
   } = useForm<LoginFormInputs>();
 
   const { user, isLoading } = useAppSelector((state) => state.user);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const onSubmit = (data: LoginFormInputs) => {
